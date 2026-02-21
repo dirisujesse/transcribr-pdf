@@ -1,0 +1,9 @@
+include: package:dart_frog_lint/recommended.yaml
+analyzer:
+  errors:
+    lines_longer_than_80_chars: ignore
+    omit_local_variable_types: ignore
+    prefer_final_locals: ignore
+    prefer_single_quotes: ignore
+    sort_constructors_first: ignore
+    unnecessary_raw_strings: ignore
