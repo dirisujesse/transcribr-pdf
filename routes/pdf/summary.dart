@@ -28,7 +28,8 @@ Future<Response> onRequest(RequestContext context) async {
     );
   }
 
-  final fileName = "${summary.title}_transcribr_transcript_summary.pdf";
+  String fileName = "${summary.title}_transcribr_transcript_summary.pdf";
+  fileName = Uri.encodeComponent(fileName);
 
   return Response.bytes(
     body: bytes,
