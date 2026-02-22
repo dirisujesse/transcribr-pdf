@@ -55,7 +55,7 @@ class PdfTitle extends StatelessWidget {
   Widget build(Context context) {
     return Text(
       text,
-      style: textStyle.bannerHeading(),
+      style: textStyle.bannerHeading(color: AppPdfColors.primaryTextColor),
       textDirection: text.pdfDirectionality,
     );
   }

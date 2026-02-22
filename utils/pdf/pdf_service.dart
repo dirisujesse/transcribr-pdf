@@ -46,7 +46,7 @@ class PdfService {
               ],
               Text(
                 title,
-                style: styles?.t3(),
+                style: styles?.t3(color: AppPdfColors.primaryTextColor),
                 textDirection: title.pdfDirectionality,
               ),
               SizedBox(height: 2),
@@ -59,7 +59,7 @@ class PdfService {
               PdfTitle("Plain Text", textStyle: styles!),
               SizedBox(height: 10),
               PdfText(plainText, textStyle: styles!),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               if (sections.hasValue) ...[
                 PdfTitle("Sections", textStyle: styles!),
                 SizedBox(height: 10),
@@ -89,13 +89,13 @@ class PdfService {
                                 ),
                             ],
                           ),
-                          SizedBox(height: 6),
+                          SizedBox(height: 2),
                         ],
                         PdfText(section.text, textStyle: styles!),
                       ],
                     );
                   },
-                  separatorBuilder: (_, __) => SizedBox(height: 10),
+                  separatorBuilder: (_, __) => SizedBox(height: 6),
                   itemCount: sections.length,
                 ),
               ],
@@ -136,7 +136,7 @@ class PdfService {
                 ],
                 Text(
                   summary.title,
-                  style: styles?.t3(),
+                  style: styles?.t3(color: AppPdfColors.primaryTextColor),
                   textAlign: TextAlign.start,
                   textDirection: summary.title.pdfDirectionality,
                 ),
@@ -159,54 +159,54 @@ class PdfService {
                     "Summary Overview",
                     textStyle: styles!,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 6),
                   PdfText(
                     summary.summaryOverview!,
                     textStyle: styles!,
                   ),
-                  SizedBox(height: 24),
+                  SizedBox(height: 14),
                 ],
                 if (summary.keyTopics.hasValue) ...[
                   PdfTitle(
                     "Key Topics & Brief Explanations",
                     textStyle: styles!,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 6),
                   for (final topic in summary.keyTopics!) ...[
                     PdfSubtitle(topic.topic.value, textStyle: styles!),
-                    SizedBox(height: 8),
+                    SizedBox(height: 4),
                     PdfText(topic.explanation.value, textStyle: styles!),
                   ],
-                  SizedBox(height: 24),
+                  SizedBox(height: 14),
                 ],
                 if (summary.decisionsAndFindings.hasValue) ...[
                   PdfTitle(
                     "Decisions & Findings",
                     textStyle: styles!,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 6),
                   PdfText(
                     summary.decisionsAndFindings!,
                     textStyle: styles!,
                   ),
-                  SizedBox(height: 24),
+                  SizedBox(height: 14),
                 ],
                 if (summary.actionableTakeaways.hasValue) ...[
                   PdfTitle(
                     "Actionable Takeaways",
                     textStyle: styles!,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 6),
                   for (final line in summary.actionableTakeaways!)
                     PdfTextTile(line, textStyle: styles!),
-                  SizedBox(height: 24),
+                  SizedBox(height: 14),
                 ],
                 if (summary.participants.hasValue) ...[
                   PdfTitle("Participants", textStyle: styles!),
-                  SizedBox(height: 10),
+                  SizedBox(height: 6),
                   for (final line in summary.participants!)
                     PdfTextTile(line, textStyle: styles!),
-                  SizedBox(height: 24),
+                  SizedBox(height: 14),
                 ],
               ];
             },
