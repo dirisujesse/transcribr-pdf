@@ -6,6 +6,7 @@
 # Files and directories created by pub
 .dart_tool/
 .packages
+temp_auto_push.bat
 pubspec.lock
 
 # Files and directories created by dart_frog
@@ -14,7 +15,5 @@ build/
 
 # Test related files
 coverage/
-branch_structure.json
-temp_auto_push.bat
-temp_interactive_push.bat
 .gitignore
+branch_structure.json
